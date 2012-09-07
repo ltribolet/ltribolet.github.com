@@ -110,9 +110,71 @@ body {
 	right: 0;
 }
 
+.span2-4 {
+	width: 20%;
+}
 
+.row-fluid .span2-4 {
+	width: 17.9487179487179488%;
+}
 
+.padd-left {
+	padding-left: 15px;
+}
 
+/* PROGRESS BAR */
+
+.meter { 
+	height: 10px;  /* Can be anything */
+	position: relative;
+	background: #d9dae4;
+	float: left;
+	width: 98%;
+}
+
+.meter > span {
+	display: block;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.arrow-right {
+	width: 0; 
+	height: 0; 
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid #d9dae4;
+	float: left;
+}
+
+/* TIMELINE */
+
+.timeline-container {
+	position: relative;
+}
+
+.timeline {
+	position: absolute;
+	left: -26px;
+	top: 19px;
+	z-index: 2;
+}
+
+.checkpoint-container {
+	position: relative;
+	z-index: 3;
+	margin-top: 10px;
+}
+
+.checkpoint {
+	height: 30px;
+	width: 30px;
+	color: #fff;
+	font-size: 30px;
+	line-height: 24px;
+	text-align: center;
+}
 
 
 
