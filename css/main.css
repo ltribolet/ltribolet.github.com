@@ -67,6 +67,12 @@ body {
 	}
 }
 
+.no-style {
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
 .bg-color-main {
 	background-color: #fff;
 }
@@ -83,6 +89,10 @@ body {
 	color: #d9dae4;
 }
 
+.color-ter {
+	color: #666666;
+}
+
 .container > .row-fluid {
 	padding: 20px 40px;
 	margin-bottom: 5px;
@@ -91,6 +101,10 @@ body {
 .container > .first {
 	position: relative;
 	padding-top: 210px;
+}
+
+.contact {
+	display:none;
 }
 
 .intro {
@@ -108,6 +122,31 @@ body {
 	position: absolute;
 	top: 0;
 	right: 0;
+	padding-right: 70px;
+}
+
+.language, .ribbons {
+	float: left;
+}
+
+.language {
+	padding: 20px;}
+
+.language, .language a {
+	color: #666666;
+}
+
+.language a.active {
+	color: #0066cc;
+}
+
+.ribbons div {
+	background: transparent url(../img/arrow-down.png) top left;
+	height: 68px;
+	width: 35px;
+	float: left;
+	margin-right: 5px;
+	cursor: pointer;
 }
 
 .span2-4 {
@@ -180,20 +219,49 @@ body {
 	font-size: 30px;
 	line-height: 24px;
 	text-align: center;
+	cursor: pointer;
 }
 
 /* PROGESS SKILLS  */
 
 .skills .meter {
-	height: 40px;
+	height: 30px;
 	width: 94%;
 }
 
 .skills .arrow-right {
-	border-top: 20px solid transparent;
-	border-bottom: 20px solid transparent;
-	border-left: 20px solid #d9dae4;
+	border-top: 15px solid transparent;
+	border-bottom: 15px solid transparent;
+	border-left: 15px solid #d9dae4;
+}
+
+.skills .meter span {
+	width: 0%;
+	background: #0066cc;
+	float: left;
+}
+
+.skills .meter .arrow-right {
+	border-left: 15px solid #0066cc;
 }
 
 
+/* COLLAPSE STYLE */
+
+.container .collapse {
+	padding: 0 40px;
+	margin: 0;
+}
+
+.container .in {
+	padding: 0 40px;
+	margin: 20px 0;
+}
+
+.collapse .span8 {
+	overflow: hidden;
+}
+
+.collapse .xpimg {
+}
 
