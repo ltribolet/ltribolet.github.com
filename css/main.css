@@ -125,11 +125,9 @@ body {
 /* PROGRESS BAR */
 
 .meter { 
-	height: 10px;  /* Can be anything */
 	position: relative;
 	background: #d9dae4;
 	float: left;
-	width: 98%;
 }
 
 .meter > span {
@@ -142,13 +140,21 @@ body {
 .arrow-right {
 	width: 0; 
 	height: 0; 
-	border-top: 5px solid transparent;
-	border-bottom: 5px solid transparent;
-	border-left: 5px solid #d9dae4;
 	float: left;
 }
 
 /* TIMELINE */
+
+.timeline .meter {
+	height: 10px;  /* Can be anything */
+	width: 98%;
+}
+
+.timeline .arrow-right {
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 5px solid #d9dae4;
+}
 
 .timeline-container {
 	position: relative;
@@ -176,9 +182,18 @@ body {
 	text-align: center;
 }
 
+/* PROGESS SKILLS  */
 
+.skills .meter {
+	height: 40px;
+	width: 94%;
+}
 
-
+.skills .arrow-right {
+	border-top: 20px solid transparent;
+	border-bottom: 20px solid transparent;
+	border-left: 20px solid #d9dae4;
+}
 
 
 
