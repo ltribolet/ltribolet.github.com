@@ -67,10 +67,16 @@ body {
 	}
 }
 
+textarea{resize: none}
+
 .no-style {
 	padding: 0;
 	margin: 0;
 	border: none;
+}
+
+.no-margin-bottom {
+	margin-bottom: 0;
 }
 
 .bg-color-main {
@@ -94,8 +100,12 @@ body {
 }
 
 .container > .row-fluid {
-	padding: 20px 40px;
 	margin-bottom: 5px;
+	padding: 20px 0;
+}
+
+.container > .row-fluid > div {
+	padding: 0 40px;
 }
 
 .container > .first {
@@ -103,8 +113,29 @@ body {
 	padding-top: 210px;
 }
 
-.contact {
+.container > .contact {
 	display:none;
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.container > .contact > div {
+	padding: 20px 40px;
+}
+
+.textarea {
+	position: relative;
+}
+
+.send {
+	position: absolute;
+	bottom: 5px;
+	cursor: pointer;
+	right: 5px;
+	display: inline-block;
+	padding: 0 20px 0 0;
+	font-size: 15px;
+	background: transparent url(../img/send.png) right top no-repeat;
 }
 
 .intro {
@@ -116,6 +147,18 @@ body {
 .title {
 	text-transform: uppercase;
 	font-size: 24px;
+}
+
+.subtitle {
+	font-size: 17px;
+}
+
+.tiny-text {
+	font-size: 13px;
+}
+
+.contact .control-group input {
+	min-height: 35px;
 }
 
 .menu {
@@ -140,6 +183,10 @@ body {
 	color: #0066cc;
 }
 
+.ribbons {
+	position: relative;
+}
+
 .ribbons div {
 	background: transparent url(../img/arrow-down.png) top left;
 	height: 68px;
@@ -147,6 +194,10 @@ body {
 	float: left;
 	margin-right: 5px;
 	cursor: pointer;
+}
+
+.ribbons .notactive {
+	margin-top: 1px;
 }
 
 .span2-4 {
@@ -222,6 +273,12 @@ body {
 	cursor: pointer;
 }
 
+.education .row-fluid {
+	border-bottom: solid 1px #b2d1f0;
+	padding-bottom: 15px;
+	padding-top: 10px;
+}
+
 /* PROGESS SKILLS  */
 
 .skills .meter {
@@ -236,7 +293,7 @@ body {
 }
 
 .skills .meter span {
-	width: 0%;
+	width: 0;
 	background: #0066cc;
 	float: left;
 }
@@ -245,6 +302,9 @@ body {
 	border-left: 15px solid #0066cc;
 }
 
+.skills .row-fluid {
+	margin-bottom: 10px;
+}
 
 /* COLLAPSE STYLE */
 

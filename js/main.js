@@ -1,8 +1,20 @@
 $(function() {
 	var meterSkills = $(".skills .meter");
 
-	$(window).scroll(function () {
+	meterProgress();
 
+	$(window).scroll(function () {
+		meterProgress();
+	});
+
+	$(".ribbon-form").on("click", function () {
+		if($(this).hasClass("notactive"))
+			$(this).removeClass("notactive");
+		else $(this).addClass("notactive");
+		$(".contact").slideToggle();
+	});
+
+	function meterProgress() {
 		meterSkills.each(function ( index, elt) {
 			$elt = $(elt);
 
@@ -17,10 +29,5 @@ $(function() {
 				$progress.data("size", 0);
 			}
 		});
-		
-	});
-
-	$(".ribbon-form").on("click", function () {
-		$(".contact").slideToggle();
-	})
+	}
 });
