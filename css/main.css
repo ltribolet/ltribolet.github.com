@@ -69,6 +69,12 @@ body {
 
 textarea{resize: none}
 
+.container input, .container textarea {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+
 .no-style {
 	padding: 0;
 	margin: 0;
@@ -77,6 +83,10 @@ textarea{resize: none}
 
 .no-margin-bottom {
 	margin-bottom: 0;
+}
+
+.margin-bottom {
+	margin-bottom: 30px;
 }
 
 .bg-color-main {
@@ -99,6 +109,11 @@ textarea{resize: none}
 	color: #666666;
 }
 
+.container {
+	position: relative;
+}
+
+
 .container > .row-fluid {
 	margin-bottom: 5px;
 	padding: 20px 0;
@@ -114,13 +129,30 @@ textarea{resize: none}
 }
 
 .container > .contact {
-	display:none;
+	/*display:none;*/
 	padding: 0;
 	margin-bottom: 0;
 }
 
+.container > .contact > .slide {
+	display: none;
+	-webkit-box-shadow: 0 4px 4px -1px rgba(0,0,0,0.4);
+	-moz-box-shadow: 0 4px 4px -1px rgba(0,0,0,0.4);
+	box-shadow: 0 4px 4px -1px rgba(0,0,0,0.4);
+	padding-top: 0;
+	padding-bottom: 0;
+	min-height: 0;
+}
+
 .container > .contact > div {
 	padding: 20px 40px;
+}
+
+.contact {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
 }
 
 .textarea {
@@ -161,6 +193,14 @@ textarea{resize: none}
 	min-height: 35px;
 }
 
+.container .contact .menu-container {
+	position: relative;
+	z-index: 10;
+	padding: 0;
+	margin:0;
+	min-height: 0;
+}
+
 .menu {
 	position: absolute;
 	top: 0;
@@ -197,7 +237,7 @@ textarea{resize: none}
 }
 
 .ribbons .notactive {
-	margin-top: 1px;
+	margin-top: 4px;
 }
 
 .span2-4 {
@@ -270,7 +310,6 @@ textarea{resize: none}
 	font-size: 30px;
 	line-height: 24px;
 	text-align: center;
-	cursor: pointer;
 }
 
 .education .row-fluid {
@@ -308,20 +347,23 @@ textarea{resize: none}
 
 /* COLLAPSE STYLE */
 
-.container .collapse {
+.container .experience {
 	padding: 0 40px;
 	margin: 0;
 }
 
-.container .in {
-	padding: 0 40px;
-	margin: 20px 0;
+.experience {
+	display: none;
 }
 
-.collapse .span8 {
+.experience.active .row-fluid {
+	padding: 20px 40px;
+}
+
+.experience .span8 {
 	overflow: hidden;
 }
 
-.collapse .xpimg {
+.experience .xpimg {
 }
 
