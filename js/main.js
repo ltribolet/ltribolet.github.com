@@ -25,13 +25,14 @@ $(function() {
 		else $this.html("&dash;");
 	});
 
-	$('a.checkpoint').click(function (e) {
+	$('a.check-activator').click(function (e) {
 		e.preventDefault();
 
 		var $this = $(this),
 		selector = $this.attr('data-target'),
 		$previous,
-		$target;
+		$target,
+		$checkpointContainer = $this.parents(".checkpoint-container");
 
 		if (!selector) {
 			selector = $this.attr('href');
@@ -41,19 +42,24 @@ $(function() {
 		$previous = $("#experiences .active");
 		$target = $(selector);
 
+
 		if($previous.length && $previous[0] !== $target[0]) {
 			$previous.removeClass("active").slideToggle("1500", function() {
 				$target.addClass("active").slideToggle();
+				$checkpointContainer.find(".active").removeClass("active").html("+");
+				$this.addClass("active").html("&ndash;");
 			});
 		}
 		else if($previous.length && $previous[0] === $target[0]){
 			$target.slideToggle("1500", function() {
 				$(this).removeClass("active");
+				$this.removeClass("active").html("+");
 			});
 		}
 		else {
 			$target.slideToggle("1500", function() {
 				$(this).addClass("active");
+				$this.addClass("active").html("&ndash;");
 			});
 		}
 
