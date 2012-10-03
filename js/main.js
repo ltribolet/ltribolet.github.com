@@ -7,22 +7,36 @@ $(function() {
 		meterProgress();
 	});
 
-	$(".ribbon-form").on("click", function () {
-
-		var $sibl = $(this).siblings();
-		if($sibl.hasClass("notactive"))
-			$sibl.removeClass("notactive");
-		else $sibl.addClass("notactive");
-		$(".contact .slide").slideToggle();
+	$(window).resize(function () {
+		meterProgress();
 	});
 
-	$('body').on('click.collapse.data-api', '[data-toggle=collapse]', function (e) {
-		$this = $(this);
+	$(".ribbon").on("click", function () {
+		var $this = $(this);
+		var $sibl = $this.siblings(".ribbon");
+		var selector = $this.attr('data-target');
+		var siblTarget = $sibl.attr('data-target');
 
-		if($this.hasClass("collapsed")) {
-			$this.html("+");
+		if($this.hasClass("notactive")){
+			$("."+ siblTarget).slideToggle(function() {
+				if($sibl.hasClass("notactive"))
+					$sibl.removeClass("notactive");
+				else {
+					$sibl.addClass("notactive");
+					$this.removeClass("notactive");
+				}
+				$("."+ selector).slideToggle();
+			});
+		} else {
+			if($sibl.hasClass("notactive"))
+				$sibl.removeClass("notactive");
+			else {
+				$sibl.addClass("notactive");
+			}
+			$("."+ selector).slideToggle();
 		}
-		else $this.html("&dash;");
+
+		
 	});
 
 	$('a.check-activator').click(function (e) {
@@ -62,9 +76,6 @@ $(function() {
 				$this.addClass("active").html("&ndash;");
 			});
 		}
-
-		
-
 	});
 
 	function meterProgress() {

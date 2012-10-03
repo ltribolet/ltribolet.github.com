@@ -5,59 +5,26 @@
    ========================================================================== */
 
 @font-face {
-	font-weight: 700;
-	font-style: italic;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Bold Italic'), local('Ubuntu-BoldItalic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/pqisLQoeO9YTDCNnlQ9bfz8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/_xyN3apAT_yRRDeqB3sPRg.woff) format('woff');
 }
-@font-face {
-	font-weight: 400;
-	font-style: italic;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Italic'), local('Ubuntu-Italic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/GZMdC02DTXXx8AdUvU2etw.woff) format('woff');
-}
-@font-face {
-	font-weight: 300;
-	font-style: italic;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Light Italic'), local('Ubuntu-LightItalic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/j-TYDdXcC_eQzhhp386SjT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-@font-face {
-	font-weight: 400;
-	font-style: normal;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/mZSs29ggGoaqrCNB3kDfZQ.woff) format('woff');
-}
-@font-face {
-	font-weight: 500;
-	font-style: italic;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Medium Italic'), local('Ubuntu-MediumItalic'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/NWdMogIO7U6AtEM4dDdf_T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
-}
-@font-face {
-	font-weight: 700;
-	font-style: normal;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/trnbTfqisuuhRVI3i45C5w.woff) format('woff');
-}
-@font-face {
-	font-weight: 300;
-	font-style: normal;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Light'), local('Ubuntu-Light'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/e7URzK__gdJcp1hLJYAEag.woff) format('woff');
-}
-@font-face {
-	font-weight: 500;
-	font-style: normal;
-	font-family: 'Ubuntu';
-	src: local('Ubuntu Medium'), local('Ubuntu-Medium'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/I5PmmDkYShUQg-ah7wh25w.woff) format('woff');
-}
+
+@font-face{ 
+	font-family: 'WebSymbolsRegular';
+	src: url('/fonts/websymbols-regular-webfont.eot');
+	src: url('/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/websymbols-regular-webfont.woff') format('woff'),
+	     url('/fonts/websymbols-regular-webfont.ttf') format('truetype'),
+	     url('/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+	}
 
 
 body {
 	background-color: #d9dae4;
 	color: #666666;
-	font-family: 'Ubuntu', 'Ubuntu Beta', UbuntuBeta, Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
+	font-family: 'Ubuntu', Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
 
 }
 
@@ -109,6 +76,10 @@ textarea{resize: none;}
 	color: #666666;
 }
 
+.color-primary {
+	color: #fff;
+}
+
 .container {
 	position: relative;
 }
@@ -128,13 +99,14 @@ textarea{resize: none;}
 	padding-top: 210px;
 }
 
-.container > .contact {
+.container > .slide {
 	/* display:none; */
 	margin-bottom: 0;
 	padding: 0;
 }
 
-.container > .contact > .slide {
+.container > .slide > .contact,
+.container > .slide > .download {
 	display: none;
 	padding-top: 0;
 	padding-bottom: 0;
@@ -144,11 +116,12 @@ textarea{resize: none;}
 	box-shadow: 0 4px 4px -1px rgba(0,0,0,0.4);
 }
 
-.container > .contact > div {
+.container > .slide > div {
 	padding: 20px 40px;
+	margin: 0;
 }
 
-.contact {
+.slide {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -193,7 +166,7 @@ textarea{resize: none;}
 	min-height: 35px;
 }
 
-.container .contact .menu-container {
+.container .slide .menu-container {
 	position: relative;
 	z-index: 10;
 	margin:0;
@@ -227,13 +200,19 @@ textarea{resize: none;}
 	position: relative;
 }
 
+.ribbon {
+	font-family: 'WebSymbolsRegular';
+}
+
 .ribbons div {
 	float: left;
 	margin-right: 5px;
-	width: 35px;
+	width: 31px;
 	height: 68px;
 	background: transparent url(../img/arrow-down.png) top left;
 	cursor: pointer;
+	line-height: 60px;
+	text-align: center;
 }
 
 .ribbons .notactive {
@@ -247,6 +226,22 @@ textarea{resize: none;}
 .row-fluid .span2-4 {
 	width: 17.9487179487179488%;
 }
+
+@media (max-width: 979px) and (min-width: 768px) {
+	.row-fluid .span2-4 {
+		width: 17.79005524861878448%;
+	}
+}
+
+@media (max-width: 767px) {
+	.row-fluid .span2-4 {
+		width: 40%;
+	}
+	.slide .contact, .slide .menu-container {
+		float: left;
+	}
+}
+
 
 .padd-left {
 	padding-left: 15px;
