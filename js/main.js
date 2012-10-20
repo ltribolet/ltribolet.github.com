@@ -1,5 +1,6 @@
 $(function() {
 	var meterSkills = $(".skills .meter");
+	var lock = false;
 
 	meterProgress();
 
@@ -77,6 +78,52 @@ $(function() {
 			});
 		}
 	});
+
+	$('.send').on('click', function () {
+		if(!lock) {
+			lock = true;
+			if(checkForm()) {
+				sendForm();
+			}
+			lock = false;
+		}
+		
+	});
+
+	function checkForm() {
+		var test = true,
+			form = $(".form-horizontal"),
+			name = $(".name"),
+			mail = $(".mail"),
+			text = $(".texte"),
+			emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+		if ( name.val().length < 3 ) {
+			test = false;
+			name.parent().addClass("error");
+		}
+		else if(name.parent().hasClass("error")) {
+				name.parent().removeClass("error");
+		}
+
+		if( !emailReg.test( mail.val() || mail.val() == "" ) ) {
+			test = false;
+			mail.parent().addClass("error");
+		}
+		else if(mail.parent().hasClass("error")) {
+			mail.parent().removeClass("error");
+		}
+
+		if ( text.val().length < 3 ) {
+			test = false;
+			text.parent().addClass("error");
+		}
+		else if(text.parent().hasClass("error")) {
+				text.parent().removeClass("error");
+		}
+
+		return test;
+	}
 
 	function meterProgress() {
 		meterSkills.each(function ( index, elt) {

@@ -13,16 +13,16 @@
 
 @font-face{ 
 	font-family: 'WebSymbolsRegular';
-	src: url('/fonts/websymbols-regular-webfont.eot');
-	src: url('/fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
-	     url('/fonts/websymbols-regular-webfont.woff') format('woff'),
-	     url('/fonts/websymbols-regular-webfont.ttf') format('truetype'),
-	     url('/fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+	src: url('../fonts/websymbols-regular-webfont.eot');
+	src: url('../fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('../fonts/websymbols-regular-webfont.woff') format('woff'),
+	     url('../fonts/websymbols-regular-webfont.ttf') format('truetype'),
+	     url('../fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
 	}
 
 
 body {
-	background-color: #d9dae4;
+	background: #d9dae4 url(../img/cardboard_flat.png) top left repeat;
 	color: #666666;
 	font-family: 'Ubuntu', Ubuntu, 'Bitstream Vera Sans', 'DejaVu Sans', Tahoma, sans-serif;
 	font-size: 100%; /* 16px */
@@ -136,7 +136,7 @@ textarea{resize: none;}
 .send {
 	position: absolute;
 	right: 5px;
-	bottom: 5px;
+	bottom: 20px;
 	display: inline-block;
 	padding: 0 20px 0 0;
 	background: transparent url(../img/send.png) right top no-repeat;
