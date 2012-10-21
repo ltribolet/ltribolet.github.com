@@ -81,21 +81,19 @@ $(function() {
 
 	$('.send').on('click', function () {
 		if(!lock) {
+			var form = $(".form-horizontal"),
+				name = $(".name"),
+				text = $(".texte"),
+				mail = $(".mail");
 			lock = true;
-			if(checkForm()) {
-				sendForm();
+			if(checkForm(form, name, mail, text)) {
+				sendForm(form, name.val(), mail.val(), text.val());
 			}
-			lock = false;
 		}
-		
 	});
 
-	function checkForm() {
+	function checkForm( form, name, mail, text ) {
 		var test = true,
-			form = $(".form-horizontal"),
-			name = $(".name"),
-			mail = $(".mail"),
-			text = $(".texte"),
 			emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 
 		if ( name.val().length < 3 ) {
@@ -106,7 +104,7 @@ $(function() {
 				name.parent().removeClass("error");
 		}
 
-		if( !emailReg.test( mail.val() || mail.val() == "" ) ) {
+		if( !emailReg.test( mail.val() || mail.val() === "" ) ) {
 			test = false;
 			mail.parent().addClass("error");
 		}
@@ -123,6 +121,36 @@ $(function() {
 		}
 
 		return test;
+	}
+
+	function sendForm ( form, name, mail, text ) {
+		var $inputs = form.find("input, textarea");
+		// let's disable the inputs for the duration of the ajax request
+		$inputs.attr("disabled", "disabled");
+
+		$.ajax({
+			type : "POST",
+			url: "mail.php",
+			data: 'nameField='+name+'&mailField='+mail+'&textField='+text,
+			success: function(data) {
+				displayMessage(data);
+			},
+			error: function (data) {
+				displayMessage(data);
+			},
+			complete: function(){
+			// enable the inputs
+				$inputs.removeAttr("disabled");
+			}
+		}).done(function() {
+			$("ribbon-form").trigger("click");
+			lock = false;
+		});
+	}
+
+	function displayMessage ( data ) {
+		$('#myModal p').html(data);
+		$('#myModal').modal('show');
 	}
 
 	function meterProgress() {
