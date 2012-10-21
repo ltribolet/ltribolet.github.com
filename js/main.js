@@ -143,7 +143,7 @@ $(function() {
 				$inputs.removeAttr("disabled");
 			}
 		}).done(function() {
-			$("ribbon-form").trigger("click");
+			$(".ribbon-form").trigger("click");
 			lock = false;
 		});
 	}
