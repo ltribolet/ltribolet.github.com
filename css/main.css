@@ -3,13 +3,16 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
 body {
 	background: url(../img/wall_paris.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	-webkit-font-smoothing: subpixel-antialiased;
+	position: relative;
 }
 
 /* ====== media ====== */
@@ -19,7 +22,8 @@ body {
 
 .media, .bd {
 	overflow:hidden;
-	*overflow:visible; zoom:1;
+	*overflow:visible;
+	zoom:1;
 }
 .media .img {
 	float:left;
@@ -31,6 +35,48 @@ body {
 .media .imgExt{
 	float:right;
 	margin-left: 10px;
+}
+
+.media-vertical {
+}
+
+.media-vertical .img {
+	float: none;
+	display: block;
+	margin: 0;
+}
+
+.media-vertical .img img {
+	margin: 0 auto;
+}
+
+/**
+ *  COLOR
+ */
+
+.primary {
+	color: #000;
+}
+
+.secondary {
+	color : #aaa;
+}
+
+.tertiary {
+	color: #666;
+}
+
+.h4 {
+	margin: 0;
+	font-size: 1.222em;
+	line-height: 1.273em;
+
+}
+
+.h5 {
+	padding-left: 20px;
+	font-size: 1.111em;
+	line-height: 1.273em;
 }
 
 .profile {
@@ -58,12 +104,15 @@ body {
 	display: inline-block;
 	margin-left: 8px;
 	margin-top: 7px;
+	cursor: pointer;
 }
 
-.card-container {
+#card-container {
 	-webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
 	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
 	border-radius: 4px;
+	margin: 0 auto;
+	float: none;
 }
 
 .profile img {
@@ -71,7 +120,9 @@ body {
 }
 
 .container {
-	margin-top: 200px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
 }
 
 .stats {
@@ -82,4 +133,45 @@ body {
 .thing {
 	background-color: rgba(47,47,47, 0.19);
 	border-top: 1px solid rgba(21,21,21, 0.19);
+	color: #fff;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
 }
+
+.social-media {
+	margin-top: 10px;
+	height: 33px;
+}
+
+.social-media li {
+	float: left;
+	margin-top: 3px;
+	margin-right: 20px;
+	list-style: none;
+}
+
+.icons {
+	-webkit-transition: opacity .5s;
+	   -moz-transition: opacity .5s;
+	    -ms-transition: opacity .5s;
+	     -o-transition: opacity .5s;
+	        transition: opacity .5s;
+	opacity: 0.5;
+}
+.icons:hover {
+	opacity: 1;
+}
+
+.social-icons {
+	background-image: url('../img/social_icons.png');
+	background-color: transparent;
+	background-repeat: no-repeat;
+	width: 25px;
+	height: 25px;
+	display: block;
+}
+
+.github  {background-position: 0 -50px;}
+.reddit  {background-position: 0 -75px;}
+.twitter {background-position: 0 -25px;}
+.google  {background-position: 0 0;}
