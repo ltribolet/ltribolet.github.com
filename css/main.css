@@ -4,7 +4,7 @@
    Author's custom styles
    ========================================================================== */
 body {
-	background: url(../img/wall_paris.jpg) no-repeat center center fixed;
+	background: url(../img/wall_paris2.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -66,17 +66,32 @@ body {
 	color: #666;
 }
 
+a {
+  color: #005580;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0088cc;
+  text-decoration: underline;
+}
+
 .h4 {
-	margin: 0;
+	padding-left: 20px;
 	font-size: 1.222em;
 	line-height: 1.273em;
+}
 
+.profile .h4 {
+	margin: 0;
+	padding: 0;
 }
 
 .h5 {
 	padding-left: 20px;
 	font-size: 1.111em;
 	line-height: 1.273em;
+	font-weight: normal;
 }
 
 .profile {
@@ -108,8 +123,9 @@ body {
 }
 
 #card-container {
-	-webkit-box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
-	box-shadow: 0px 0px 1px 1px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
+	   -moz-box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
+			box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
 	border-radius: 4px;
 	margin: 0 auto;
 	float: none;
@@ -128,6 +144,24 @@ body {
 .stats {
 	background-color: #f9f9f9;
 	border-top: 1px solid #e6e6e6;
+}
+
+.details {
+	color: #fff;
+	text-shadow: 2px 2px 2px black;
+	border-top: 1px solid #e6e6e6;
+}
+
+.details > .span12{
+	min-height: 0;
+}
+
+.rdc-detail, .sas-detail, .atos-detail {
+	display: none;
+}
+
+.text-detail {
+	padding: 10px 20px;
 }
 
 .thing {
@@ -175,3 +209,26 @@ body {
 .reddit  {background-position: 0 -75px;}
 .twitter {background-position: 0 -25px;}
 .google  {background-position: 0 0;}
+
+
+@media (max-width: 767px) {
+	body {
+		padding: 0;
+	}
+	#card-container {
+		border-radius: 0;
+	}
+	.profile {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	.container {
+		max-width: 724px;
+	}
+
+	.thing {
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+}
