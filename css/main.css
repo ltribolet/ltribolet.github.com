@@ -15,41 +15,6 @@ body {
 	position: relative;
 }
 
-/* ====== media ====== */
-.media {
-	margin: 20px;
-}
-
-.media, .bd {
-	overflow:hidden;
-	*overflow:visible;
-	zoom:1;
-}
-.media .img {
-	float:left;
-	margin-right: 10px;
-}
-.media .img img{
-	display:block;
-}
-.media .imgExt{
-	float:right;
-	margin-left: 10px;
-}
-
-.media-vertical {
-}
-
-.media-vertical .img {
-	float: none;
-	display: block;
-	margin: 0;
-}
-
-.media-vertical .img img {
-	margin: 0 auto;
-}
-
 /**
  *  COLOR
  */
@@ -88,14 +53,17 @@ a:hover {
 }
 
 .h5 {
-	padding-left: 20px;
 	font-size: 1.111em;
 	line-height: 1.273em;
 	font-weight: normal;
 }
 
+.h5-offset {
+	margin-left: 20px;
+}
+
 .profile {
-	background-color: #fff;
+	background-color: #f9f9f9;
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 	position: relative;
@@ -123,16 +91,12 @@ a:hover {
 }
 
 #card-container {
-	-webkit-box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
-	   -moz-box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
-			box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0 12px 6px rgba(0,0,0,0.6);
+	   -moz-box-shadow: 0 0 12px 6px rgba(0,0,0,0.6);
+			box-shadow: 0 0 12px 6px rgba(0,0,0,0.6);
 	border-radius: 4px;
 	margin: 0 auto;
 	float: none;
-}
-
-.profile img {
-	border-radius: 4px;
 }
 
 .container {
@@ -142,8 +106,25 @@ a:hover {
 }
 
 .stats {
-	background-color: #f9f9f9;
+	background-color: #fff;
 	border-top: 1px solid #e6e6e6;
+}
+
+.media-vertical .logo-company {
+	float: none;
+	display: block;
+	text-align: center;
+	padding: 7px;
+	margin: 3px;
+	-webkit-box-shadow:0 0 3px 1px #aaa;
+	   -moz-box-shadow:0 0 3px 1px #aaa;
+	        box-shadow:0 0 3px 1px #aaa;
+}
+
+.media-vertical {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
 }
 
 .details {
@@ -160,7 +141,7 @@ a:hover {
 	display: none;
 }
 
-.text-detail {
+.text-detail, .profile > .span12, .stats > .span12 {
 	padding: 10px 20px;
 }
 
@@ -177,6 +158,18 @@ a:hover {
 	height: 33px;
 }
 
+.sidekick {
+	display: none;
+}
+
+.click-company {
+	cursor: pointer;
+}
+
+.icon-chevron-left {
+	float: left;
+}
+
 .social-media li {
 	float: left;
 	margin-top: 3px;
@@ -187,9 +180,9 @@ a:hover {
 .icons {
 	-webkit-transition: opacity .5s;
 	   -moz-transition: opacity .5s;
-	    -ms-transition: opacity .5s;
-	     -o-transition: opacity .5s;
-	        transition: opacity .5s;
+		-ms-transition: opacity .5s;
+		 -o-transition: opacity .5s;
+			transition: opacity .5s;
 	opacity: 0.5;
 }
 .icons:hover {
@@ -210,8 +203,8 @@ a:hover {
 .twitter {background-position: 0 -25px;}
 .google  {background-position: 0 0;}
 
-
 @media (max-width: 767px) {
+
 	body {
 		padding: 0;
 	}
@@ -230,5 +223,28 @@ a:hover {
 	.thing {
 		border-bottom-right-radius: 0;
 		border-bottom-left-radius: 0;
+	}
+
+	.logo-company, .sidekick {
+		float: left;
+		width: 50%;
+		display: block;
+	}
+
+	.swoosh {
+		width: 200%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.media-vertical .logo-company {
+		float: left;
+		display: block;
+		text-align: center;
+		padding: 0;
+		margin: 0;
+		-webkit-box-shadow:none;
+		   -moz-box-shadow:none;
+		        box-shadow:none;
 	}
 }
