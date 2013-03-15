@@ -54,21 +54,20 @@ function detailDesktop ( thisObj ) {
 
 function detailPhone ( thisObj ) {
 	var $this = $(thisObj),
-		width = $this.width();
-		$swoosh = $this.parents('.swoosh');
+		$swoosh = $this.parents('.swoosh'),
+		$obj = $swoosh.find('.click-company')
+		$sidekick = $swoosh.find('.sidekick');
 
-		if( $swoosh.hasClass('opened') ) {
-			$swoosh.animate({'left' : 0}, 200,function(){
-				$swoosh.removeClass('opened');
+		if( $obj.hasClass('active') ) {
+			$sidekick.slideToggle("1500", function() {
+				$obj.removeClass('active');
 			});
 		}
 		else {
-			$swoosh.animate({'left' : -width}, 200,function(){
-				$swoosh.addClass('opened');
+			$sidekick.slideToggle("1500", function() {
+				$obj.addClass('active');
 			});
 		}
-
-
 }
 
 $(function() {

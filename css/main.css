@@ -32,13 +32,13 @@ body {
 }
 
 a {
-  color: #005580;
-  text-decoration: none;
+	color: #005580;
+	text-decoration: none;
 }
 
 a:hover {
-  color: #0088cc;
-  text-decoration: underline;
+	color: #0088cc;
+	text-decoration: underline;
 }
 
 .h4 {
@@ -67,6 +67,12 @@ a:hover {
 	border-top-left-radius: 4px;
 	border-top-right-radius: 4px;
 	position: relative;
+}
+
+.img-rounded {
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
 }
 
 .mail {
@@ -112,13 +118,10 @@ a:hover {
 
 .media-vertical .logo-company {
 	float: none;
-	display: block;
+	display: inline-block;
 	text-align: center;
 	padding: 7px;
 	margin: 3px;
-	-webkit-box-shadow:0 0 3px 1px #aaa;
-	   -moz-box-shadow:0 0 3px 1px #aaa;
-	        box-shadow:0 0 3px 1px #aaa;
 }
 
 .media-vertical {
@@ -166,8 +169,9 @@ a:hover {
 	cursor: pointer;
 }
 
-.icon-chevron-left {
+.icon-arrow-up {
 	float: left;
+	margin-top: 2px;
 }
 
 .social-media li {
@@ -185,7 +189,8 @@ a:hover {
 			transition: opacity .5s;
 	opacity: 0.5;
 }
-.icons:hover {
+.icons:hover,
+.media-vertical .logo-company.active {
 	opacity: 1;
 }
 
@@ -207,7 +212,13 @@ a:hover {
 
 	body {
 		padding: 0;
+		font-size: 24px;
 	}
+
+	.text-detail {
+		line-height: 1.4;
+	}
+
 	#card-container {
 		border-radius: 0;
 	}
@@ -225,26 +236,23 @@ a:hover {
 		border-bottom-left-radius: 0;
 	}
 
-	.logo-company, .sidekick {
-		float: left;
-		width: 50%;
-		display: block;
+	.thing > .span12 {
+		padding: 30px;
 	}
 
-	.swoosh {
-		width: 200%;
-		position: relative;
-		overflow: hidden;
+	.social-media li {
+		margin-right: 70px;
+	}
+
+	.sidekick {
+		display: none;
+		min-height: 0;
 	}
 
 	.media-vertical .logo-company {
-		float: left;
 		display: block;
 		text-align: center;
 		padding: 0;
 		margin: 0;
-		-webkit-box-shadow:none;
-		   -moz-box-shadow:none;
-		        box-shadow:none;
 	}
 }
