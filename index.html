@@ -40,8 +40,8 @@
 					<div class="row-fluid profile">
 						<div class="span12">
 							<div class="media">
-								<a href="http://twitter.com/m3galo" class="pull-left" target="_blank">
-									<img src="img/moi.jpg" alt="me" width="50" height="50" class="img-rounded"/>
+								<a href="http://twitter.com/m3galo" class="pull-left identity" target="_blank">
+									<img src="img/moi.jpg" alt="me" width="50" height="50" class="img-rounded img-rwd"/>
 								</a>
 								<div class="media-body">
 									<h4 class="primary h4"><a href="http://blog.tribolet.fr" target="_blank" title="My blog">Luc Tribolet</a></h4>
@@ -61,7 +61,7 @@
 									<div class="media media-vertical">
 										<div class="swoosh">
 											<a href="#" data-target="rdc" class="logo-company click-company icons">
-												<img src="img/logo_rdc.jpg" width="300" height="300" alt="me"/>
+												<img src="img/logo_rdc.jpg" alt="me" width="300" height="300" class="img-rwd"/>
 											</a>
 											<div class="sidekick">
 												<h4 class="h4">PHP Developer</h4>
@@ -80,7 +80,7 @@
 									<div class="media media-vertical">
 										<div class="swoosh">
 											<a href="#" data-target="sas" class="logo-company click-company icons">
-												<img src="img/logo_sas.jpg" width="300" height="300" alt="me"/>
+												<img src="img/logo_sas.jpg" width="300" height="300" alt="me" class="img-rwd"/>
 											</a>
 											<div class="sidekick">
 												<h4 class="h4">Dev Intern</h4>
@@ -99,7 +99,7 @@
 									<div class="media media-vertical">
 										<div class="swoosh">
 											<a href="#" data-target="atos" class="logo-company click-company icons">
-												<img src="img/logo_atos.jpg" width="300" height="300" alt="me"/>
+												<img src="img/logo_atos.jpg" width="300" height="300" alt="me" class="img-rwd"/>
 											</a>
 											<div class="sidekick">
 												<h4 class="h4">Dev Intern</h4>
@@ -179,5 +179,20 @@
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
 		<script src="js/vendor/bootstrap.min.js"></script>
 		<script src="js/main.min.js"></script>
+		<!-- Piwik -->
+		<script type="text/javascript">
+		  var _paq = _paq || [];
+		  _paq.push(["trackPageView"]);
+		  _paq.push(["enableLinkTracking"]);
+
+		  (function() {
+		    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.tribolet.fr/";
+		    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+		    _paq.push(["setSiteId", "2"]);
+		    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+		    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+		  })();
+		</script>
+		<!-- End Piwik Code -->
 	</body>
 </html>

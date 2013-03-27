@@ -75,6 +75,10 @@ a:hover {
 	        border-radius: 2px;
 }
 
+.identity {
+	max-width: 50px;
+}
+
 .mail {
 	position: absolute;
 	right: 0;
@@ -118,10 +122,14 @@ a:hover {
 
 .media-vertical .logo-company {
 	float: none;
-	display: inline-block;
 	text-align: center;
 	padding: 7px;
 	margin: 3px;
+}
+
+.img-rwd {
+	display: block;
+	margin: 0 auto;
 }
 
 .media-vertical {
