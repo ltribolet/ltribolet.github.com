@@ -1,3 +1,4 @@
+body { padding-top: 50px;position: relative;}
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -5,31 +6,103 @@
     padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.navbar {
+  margin-bottom: 0;
+  background: #2d2d2d;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
+.navbar li {
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
+.navbar-fixed-top {
+  border: none;
 }
 
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+  display: block;
+  padding: 25px 20px;
+  position: relative;
+  font-weight: bold;
+}
+
+.navbar-fixed-top {
+  top: 0;
+  border-width: 0 0 1px;
+  border-bottom-color: #999999;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #999999;
+  background-color: transparent;
+}
+
+a {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -ms-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.jumbotron {
+  color: #ffffff;
+  height: 717px;
+  text-align: center;
+  background: url(../images/parallax.jpg) repeat-y center top;
+  background-size: cover;
+  margin: 0 -15px;
+  padding: 0;
+}
+
+.jumbotron .overlay {
+  height:717px;
+}
+
+.overlay {
+  height: 300px;
+  padding-bottom: 65px;
+  background: #2d2d2d;
+  filter: alpha(opacity = 90);
+  background: rgba(45, 45, 45, 0.85);
+}
+
+.jumbotron h1 {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 40px;
+  position: relative;
+  text-transform: uppercase;
+  margin-top: 300px;
+}
+
+.jumbotron h1:before {
+  border-top: 3px solid #FFFFFF;
+  content: "";
+  display: block;
+  left: 50%;
+  margin-left: -380px;
+  position: absolute;
+  top: 19px;
+  width: 68px;
+  z-index: 0;
+}
+
+
+.jumbotron h1:after {
+  border-top: 3px solid #FFFFFF;
+  content: "";
+  display: block;
+  right: 50%;
+  margin-right: -380px;
+  position: absolute;
+  top: 19px;
+  width: 68px;
+  z-index: 0;
 }
 
 /* Custom page footer */
@@ -39,34 +112,89 @@ body {
     border-top: 1px solid #e5e5e5;
 }
 
-.container-narrow > hr {
-    margin: 30px 0;
+.title {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.22) inset;
+  -webkit-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.22) inset;
+  -moz-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.22) inset;
+  -ms-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.22) inset;
+  -o-box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.22) inset;
 }
 
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+.title h2 {
+  color: #ffffff;
+  display: inline-block;
+  font-size: 36px;
+  position: relative;
+  text-transform: uppercase;
 }
 
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+.title p {
+  color: #FFFFFF;
+  font-size: 15px;
+  line-height: 22px;
+  position: relative;
+  margin-top: 10px;
 }
 
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
+.about .title {
+  background: #6ac8c8;
+}
+.skills .title {
+  background: #92c14d;
+}
+.resume .title {
+  background: #f97c39;
+}
+.contact .title {
+  background: #ffbe00;
 }
 
-.marketing p + h4 {
-    margin-top: 28px;
+.content {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  position: relative;
+  width: 960px;
 }
+
+.inner-title {
+  text-align: center;
+  margin-top: 50px;
+}
+.inner-content {
+  margin-top: 70px;
+  margin-bottom: 0;
+}
+
+.inner-title h3 {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #2d2d2d;
+}
+
+.inner-title p {
+  font-size: 14px;
+  color: #999999;
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
         max-width: 730px;
+    }
+
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
     }
 
     /* Remove the padding we set earlier */
@@ -77,13 +205,7 @@ body {
         padding-right: 0;
     }
 
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-    
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
+    .content {
+      width: 700px;
     }
 }
