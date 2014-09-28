@@ -6,7 +6,7 @@ body { padding-top: 50px;position: relative;}
     padding: 0.2em 0;
 }
 
-.navbar {
+.navbar, .footer {
   margin-bottom: 0;
   background: #2d2d2d;
 }
@@ -53,7 +53,7 @@ a {
   color: #ffffff;
   height: 447px;
   text-align: center;
-  background: url(../images/jGIGWOA.jpg) repeat center top;
+  background: url(../images/jGIGWOA.jpg) center 0 repeat fixed;
   background-size: auto;
   margin: 0 -15px;
   padding: 0;
@@ -401,6 +401,31 @@ a {
   font-size: 13px;
 }
 
+.form-btn {
+  background: #2D2D2D;
+  color: #FFFFFF;
+  display: block;
+  font-size: 14px;
+  height: 45px;
+  text-transform: uppercase;
+  width: 20%;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  float: right;
+ }
+
+.form-btn:hover {
+  background: #2D2D2D;
+  color: #999999;
+}
+
+.contact {
+  margin-bottom: 40px;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
@@ -430,5 +455,11 @@ a {
 @media only screen and (max-width: 959px) and (min-width: 768px) {
   .content {
     width: 700px;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 480px) {
+  .content {
+    width: 400px;
   }
 }
