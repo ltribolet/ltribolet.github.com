@@ -49,18 +49,39 @@ a {
   transition: all 0.5s ease 0s;
 }
 
-.jumbotron {
-  color: #ffffff;
-  height: 447px;
-  text-align: center;
-  background: url(../images/jGIGWOA.jpg) center 0 repeat fixed;
-  background-size: auto;
-  margin: 0 -15px;
-  padding: 0;
+.overlay {
+  height:100%;
+  min-height:100%;
 }
 
-.jumbotron .overlay {
-  height:447px;
+/* Header */
+.large-header {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-size: cover;
+  z-index: 1;
+  font-weight: 400;
+  font-size: 1em;
+  line-height: 1.25;
+  font-family: 'Raleway', Calibri, Arial, sans-serif;
+  /*background: #333 url('../images/demo-1-bg.jpg') center 0 no-repeat fixed;*/
+  background: #333 url(../images/jGIGWOA.jpg) center 0 repeat fixed;
+}
+
+.main-title {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  color: #f9f1e9;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transform: translate3d(-50%,-50%,0);
+  text-transform: uppercase;
+  font-size: 4.2em;
+  letter-spacing: 0.1em;
 }
 
 .overlay {
@@ -69,40 +90,9 @@ a {
   background: #2d2d2d;
   filter: alpha(opacity = 90);
   background: rgba(45, 45, 45, 0.65);
-}
-
-.jumbotron h1 {
-  color: #ffffff;
-  display: inline-block;
-  font-size: 40px;
-  position: relative;
-  text-transform: uppercase;
-  margin-top: 190px;
-}
-
-.jumbotron h1:before {
-  border-top: 3px solid #FFFFFF;
-  content: "";
-  display: block;
-  left: 50%;
-  margin-left: -380px;
   position: absolute;
-  top: 19px;
-  width: 68px;
-  z-index: 0;
-}
-
-
-.jumbotron h1:after {
-  border-top: 3px solid #FFFFFF;
-  content: "";
-  display: block;
-  right: 50%;
-  margin-right: -380px;
-  position: absolute;
-  top: 19px;
-  width: 68px;
-  z-index: 0;
+  top: 0;
+  width: 100%;
 }
 
 /* Custom page footer */
