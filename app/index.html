@@ -32,6 +32,7 @@
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
         <link rel="stylesheet" href="styles/main.css">
+        <link href='http://fonts.googleapis.com/css?family=Raleway:200,400,800' rel='stylesheet' type='text/css'>
         <!-- endbuild -->
     </head>
     <body data-spy="scroll" data-target=".navbar-default">
@@ -64,10 +65,10 @@
             </nav>
         </header>
         <div id="home" class="container-fluid">
-            <section class="jumbotron">
+            <section id="large-header" class="large-header">
+                <canvas id="animated-canvas"></canvas>
                 <div class="overlay">
-                    <h1><span>i'm a full stack developer</span></h1>
-                    <p class="lead">Architect. Developer. OpenSource enthusiast.</p>
+                    <h1 id="main-title" class="main-title">i'm a full stack developer</h1>
                 </div>
             </section>
 
@@ -307,6 +308,9 @@
         <script src="../bower_components/bootstrap/js/tab.js"></script>
         <!-- endbuild -->
 
+        <script src="scripts/TweenLite.min.js"></script>
+        <script src="scripts/EasePack.min.js"></script>
+        <script src="scripts/rAF.js"></script>
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
         <!-- endbuild -->
