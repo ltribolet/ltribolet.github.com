@@ -98,7 +98,7 @@
 
   function resize() {
     width = window.innerWidth;
-    height = window.innerHeight;
+    height = window.innerHeight/2;
     largeHeader.style.height = height+'px';
     canvas.width = width;
     canvas.height = height;
@@ -182,4 +182,15 @@
     return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
   }
 
+  $('.goto').on('click', function(e) {
+    e.preventDefault();
+    var goto = $(this).attr('href');
+    var pos = $(goto).offset();
+    var topPos = pos.top - 69;
+
+    $('html, body').animate({scrollTop:topPos}, '1500');
+  });
+
 })();
+
+

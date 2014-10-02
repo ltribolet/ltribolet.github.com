@@ -1,3 +1,30 @@
+/*
+ * UTILITIES
+ */
+@font-face {
+  font-family: 'socicon';
+  src: url('font/socicon-webfont.eot');
+  src: url('font/socicon-webfont.eot?#iefix') format('embedded-opentype'),
+  url('font/socicon-webfont.woff') format('woff'),
+  url('font/socicon-webfont.ttf') format('truetype'),
+  url('font/socicon-webfont.svg#sociconregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.saucisson {
+  font-family: 'socicon' !important;
+}
+
+.no-underline, .no-underline:hover {
+  text-decoration: none;
+}
+
+
+/*
+ * SERIOUS BUSINESS
+ */
+
 body { padding-top: 50px;position: relative;}
 .browsehappy {
     margin: 0.2em 0;
@@ -21,7 +48,7 @@ body { padding-top: 50px;position: relative;}
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #ffffff;
+  color: #999999;
   display: block;
   padding: 25px 20px;
   position: relative;
@@ -30,15 +57,47 @@ body { padding-top: 50px;position: relative;}
 
 .navbar-fixed-top {
   top: 0;
-  border-width: 0 0 1px;
-  border-bottom-color: #999999;
+  overflow: hidden;
 }
 
 .navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav li a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #999999;
+  color: #ffffff;
   background-color: transparent;
+}
+
+.navbar-style-underline nav a {
+  padding: 0.25em 0 0.5em;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+}
+
+.navbar-style-underline nav li a::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  content: '';
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transform: translate3d(0,150%,0);
+  transform: translate3d(0,150%,0);
+}
+
+.navbar-style-underline nav li.nav-home a::after { background: #2CC185;}
+.navbar-style-underline nav li.nav-about a::after { background: #6ac8c8;}
+.navbar-style-underline nav li.nav-resume a::after { background: #f97c39;}
+.navbar-style-underline nav li.nav-contact a::after { background: #ffbe00;}
+
+.navbar-style-underline nav li.active a::after {
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+
+.navbar-style-underline nav a span {
+  font-weight: 700;
 }
 
 a {
@@ -415,6 +474,14 @@ a {
 .contact {
   margin-bottom: 40px;
 }
+
+.form-control {
+  border-radius: 0;
+}
+
+/*
+ * MEDIA QUERIES
+ */
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
