@@ -233,6 +233,41 @@
 
     $('html, body').animate({scrollTop:topPos}, '1500');
   });
+    var settings = {
+        text: 'To Top',
+        min: 200,
+        inDelay: 600,
+        outDelay: 400,
+        containerID: 'toTop',
+        containerHoverID: 'toTopHover',
+        scrollSpeed: 400,
+        easingType: 'linear'
+    };
+
+    var toTopHidden = true;
+    var toTop = $('#' + settings.containerID);
+
+    toTop.click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({scrollTop:0}, '1500');
+    });
+
+    $(window).scroll(function() {
+        var sd = $(this).scrollTop();
+        if (sd > settings.min && toTopHidden)
+        {
+            toTop.fadeIn(settings.inDelay);
+            toTopHidden = false;
+        }
+        else if(sd <= settings.min && ! toTopHidden)
+        {
+            toTop.fadeOut(settings.outDelay);
+            toTopHidden = true;
+        }
+    });
+
+
+
 
     $('#form-submit').on('click', function(e) {
         e.preventDefault();
