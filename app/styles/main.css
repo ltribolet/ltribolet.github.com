@@ -519,4 +519,17 @@ a {
   .content {
     width: 400px;
   }
+  .divider {
+    width: 375px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .content {
+    width: 400px;
+  }
+
+  .divider {
+    width: 375px;
+  }
 }
