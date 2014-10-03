@@ -182,6 +182,49 @@
     return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
   }
 
+    function checkform() {
+        var bCorrect = true,
+            $inputName = $('#input-name'),
+            $inputEmail = $('#input-email'),
+            $inputSubject = $('#input-subject'),
+            $inputText = $('#input-text');
+
+        // check first name
+        if ($inputName.val() == "") {
+            $inputName.parents('.form-group').addClass('has-error');
+            bCorrect = false;
+        }
+
+        // check last name
+        if ($inputEmail.val() == "") {
+            $inputEmail.parents('.form-group').addClass('has-error');
+            bCorrect = false;
+        }
+
+        // check email field
+        if ($inputSubject.val() == "") {
+            $inputSubject.parents('.form-group').addClass('has-error');
+            bCorrect = false;
+        }
+
+        if ($inputText.val() == "") {
+            $inputText.parents('.form-group').addClass('has-error');
+            bCorrect = false;
+        }
+
+        // check for valid email addy
+        var apos = $inputEmail.val().indexOf("@");
+        var dotpos = $inputEmail.val().lastIndexOf(".");
+
+        if (apos < 1 || dotpos - apos < 2) {
+            $inputEmail.parents('.form-group').addClass('has-error');
+            bCorrect = false;
+        }
+
+        // ** END **
+        return bCorrect;
+    }
+
   $('.goto').on('click', function(e) {
     e.preventDefault();
     var goto = $(this).attr('href');
@@ -190,6 +233,27 @@
 
     $('html, body').animate({scrollTop:topPos}, '1500');
   });
+
+    $('#form-submit').on('click', function(e) {
+        e.preventDefault();
+        $('#form-contact').find('.has-error').removeClass('has-error');
+        checkform();
+        /*if (checkform()) {
+            var form = new FormData($('#form-contact')[0]);
+            $.ajax({
+                url: "sendMail.php",
+                dataType: "json",
+                type: "POST",
+                data: form,
+                success: function (data) {
+
+                },
+                error: function (data) {
+
+                }
+            });
+        }*/
+    });
 
 })();
 
