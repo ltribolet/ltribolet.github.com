@@ -272,14 +272,13 @@
     $('#form-submit').on('click', function(e) {
         e.preventDefault();
         $('#form-contact').find('.has-error').removeClass('has-error');
-        checkform();
-        /*if (checkform()) {
+        if (checkform()) {
             var form = new FormData($('#form-contact')[0]);
             $.ajax({
                 url: "sendMail.php",
                 dataType: "json",
                 type: "POST",
-                data: form,
+                data: '{}',
                 success: function (data) {
 
                 },
@@ -287,7 +286,7 @@
 
                 }
             });
-        }*/
+        }
     });
 
 })();
