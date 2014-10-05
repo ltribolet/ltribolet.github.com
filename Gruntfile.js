@@ -270,6 +270,8 @@ module.exports = function (grunt) {
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
+                        'includes/{,*/}*.*',
+                        'file/{,*/}*.*',
                         'images/{,*/}*.*',
                         '{,*/}*.html',
                         '{,*/}*.php',

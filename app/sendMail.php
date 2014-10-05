@@ -6,13 +6,15 @@
  * Time: 20:00
  */
 
-//form data
-$sName = strip_tags($_POST['input-name']);
-$sEmail = strip_tags($_POST['input-email']);
-$sSubject = htmlentities(strip_tags($_POST['input-subject']));
-$sText = htmlentities(strip_tags($_POST['input-text']));
+require 'includes/PHPMailer-master/PHPMailerAutoload.php';
 
-$aErrors = [];
+//form data
+$sName = trim(strip_tags($_POST['input-name']));
+$sEmail = trim(strip_tags($_POST['input-email']));
+$sSubject = htmlentities(strip_tags($_POST['input-subject']));
+$sText = htmlentities($_POST['input-text']);
+
+$aErrors = array();
 
 if ($sName == "") {
     $aErrors['input-name'] = 'input-name';
@@ -32,28 +34,26 @@ if ($sText == "") {
 
 if (empty($aErrors)) {
     // the email address where the script will email the form results to
-    $to = "luc+perso@tribolet.fr";
+    // from the form
 
-    // where the email will look like it is sent from
-    $from = $sEmail;
 
-    $subject = $sSubject;
+    $mail = new PHPMailer;
 
-    $body = $sText . "
-    ";
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
 
-    $headers = "From: $from" . "
-    ";
-    $headers .= "Reply-To: $from" . "
-    ";
-    $headers .= "Return-Path: $from" . "
-    ";
+    $mail->From = $sEmail;
+    $mail->FromName = $sEmail;
+    $mail->addAddress('luc.tribolet+perso@gmail.com', 'Luc Tribolet');     // Add a recipient
+    $mail->addReplyTo($sEmail, $sEmail);
 
-    // mail(to,subject,body,headers);
+    $mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+    $mail->isHTML(true);                                  // Set email format to HTML
 
-    $isMailed = mail($to, $subject, $body, $headers);
+    $mail->Subject = 'Form Contact - ' . $sSubject;
+    $mail->Body    = $sText;
+    $mail->AltBody = strip_tags($sText);
 
-    if ($isMailed) {
+    if ($mail->send()) {
         $aReturn = array('success' => true);
     } else {
         $aReturn = array('success' => false, 'reason' => 0);

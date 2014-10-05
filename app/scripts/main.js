@@ -286,10 +286,10 @@
                 data: form,
                 success: function (data) {
                     $spinnerHolder.hide();
-                    if (data.success == 'true') {
+                    if (data.success == true) {
                         $formContact.hide();
-                        $('#successMessage').show();
-                    } else if (data.success == 'false' && data.reason == 0) {
+                        $('#successMessage').removeClass('hide');
+                    } else if (data.success == false && data.reason == 0) {
                         $('#errorMessage').removeClass('hide');
                     } else {
                         $.each(data.reason, function(index, error) {
