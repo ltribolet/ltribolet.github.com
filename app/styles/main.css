@@ -306,6 +306,10 @@ a {
   margin: 0 auto;
 }
 
+.img-profile img {
+  height: 100%;
+}
+
 .dl-btn p,
 .fol-btn p {
   color: #666666;
@@ -466,7 +470,7 @@ a {
   font-size: 14px;
   height: 45px;
   text-transform: uppercase;
-  width: 20%;
+  width: 80px;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
@@ -646,11 +650,19 @@ a {
 
 @media only screen and (max-width: 479px) {
   .content {
-    width: 400px;
+    width: 100%;
+  }
+
+  .main-title {
+    font-size: 3em;
   }
 
   .divider {
-    width: 375px;
+    width: 100%;
+  }
+
+  .img-profile:before,.img-profile:after {
+    display: none;
   }
 
   .profile {
