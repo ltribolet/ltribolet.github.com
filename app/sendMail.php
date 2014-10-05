@@ -15,19 +15,19 @@ $sText = htmlentities(strip_tags($_POST['input-text']));
 $aErrors = [];
 
 if ($sName == "") {
-    $aErrors['input-name'] = true;
+    $aErrors['input-name'] = 'input-name';
 }
 
 if ($sEmail == "" || !filter_var($sEmail, FILTER_VALIDATE_EMAIL)) {
-    $aErrors['input-email'] = true;
+    $aErrors['input-email'] = 'input-email';
 }
 
 if ($sSubject == "") {
-    $aErrors['input-subject'] = true;
+    $aErrors['input-subject'] = 'input-subject';
 }
 
 if ($sText == "") {
-    $aErrors['input-text'] = true;
+    $aErrors['input-text'] = 'input-text';
 }
 
 if (empty($aErrors)) {

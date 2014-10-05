@@ -271,19 +271,35 @@
 
     $('#form-submit').on('click', function(e) {
         e.preventDefault();
-        $('#form-contact').find('.has-error').removeClass('has-error');
+        var $formContact = $('#form-contact'),
+            $spinnerHolder = $('.spinner-holder'),
+            $errorMessage = $('#errorMessage');
+        $formContact.find('.has-error').removeClass('has-error');
+        $errorMessage.addClass('hide');
         if (checkform()) {
-            var form = new FormData($('#form-contact')[0]);
+            $spinnerHolder.show();
+            var form = $formContact.serialize();
             $.ajax({
                 url: "sendMail.php",
                 dataType: "json",
                 type: "POST",
-                data: '{}',
+                data: form,
                 success: function (data) {
-
+                    $spinnerHolder.hide();
+                    if (data.success == 'true') {
+                        $formContact.hide();
+                        $('#successMessage').show();
+                    } else if (data.success == 'false' && data.reason == 0) {
+                        $('#errorMessage').removeClass('hide');
+                    } else {
+                        $.each(data.reason, function(index, error) {
+                            $('#' + error).parents('.form-group').addClass('has-error');
+                        });
+                    }
                 },
                 error: function (data) {
-
+                    $spinnerHolder.hide();
+                    $('#errorMessage').removeClass('hide');
                 }
             });
         }
