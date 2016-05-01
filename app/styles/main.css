@@ -23,19 +23,6 @@ section {
   color: #272727;
 }
 
-.padded {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.padded-top {
-  padding-top: 60px;
-}
-
-.padded-bottom {
-  padding-bottom: 60px;
-}
-
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
   .padded {
@@ -64,25 +51,7 @@ h1 {
 }
 
 .hero h1 {
-  padding-bottom: 0px;
-}
-
-h2 {
-  font-family: 'Lekton', sans-serif;
-  font-size: 12px;
-  line-height: 12px;
-  color: #777777;
-  letter-spacing: 0.20em;
-  padding-bottom: 20px;
-  -webkit-font-variant-ligatures: no-common-ligatures;
-}
-
-h6 {
-  font-weight: 400;
-  font-size: 7px;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.3em;
+  padding-bottom: 0;
 }
 
 p {
@@ -110,11 +79,6 @@ a:hover {
     line-height: 62px;
     padding-bottom: 40px;
   }
-
-  h2 {
-    padding-bottom: 40px;
-  }
-
 }
 
 /* Medium Devices, Desktops */
@@ -123,7 +87,6 @@ a:hover {
     font-size: 55px;
     line-height: 70px;
   }
-
 }
 
 /* Large Devices, Wide Screens */
@@ -132,10 +95,6 @@ a:hover {
     font-size: 60px;
     line-height: 72px;
     padding-bottom: 50px;
-  }
-
-  h2 {
-    padding-bottom: 40px;
   }
 
   p {
@@ -197,11 +156,6 @@ a:hover {
     margin-bottom: 10px;
   }
 
-  .hero h2 {
-    padding: 0;
-    margin-bottom: 10px;
-  }
-
   .hero h1 {
     margin: 0;
     padding: 0;
@@ -216,11 +170,6 @@ a:hover {
 
   .scroll-to {
     display: block;
-  }
-
-  .hero h2 {
-    padding-bottom: 20px;
-    margin-bottom: 10px;
   }
 
   .hero h1 {
@@ -265,7 +214,7 @@ footer {
   position: relative;
 }
 
-.social-list a:hover {
+.social-list a:hover, .social-list a:focus {
   opacity: 1;
   text-decoration: none;
 }
@@ -275,34 +224,17 @@ footer {
   font-style: normal;
   font-weight: normal;
   speak: none;
-
   display: inline-block;
   text-decoration: inherit;
   width: 1em;
   margin-right: .2em;
   text-align: center;
-  /* opacity: .8; */
-
-  /* For safety - reset parent styles, that can break glyph codes*/
   font-variant: normal;
   text-transform: none;
-
-  /* fix buttons height, for twitter bootstrap */
   line-height: 1em;
-
-  /* Animation center compensation - margins should be symmetric */
-  /* remove if not needed */
   margin-left: .2em;
-
-  /* you can be more comfortable with increased icons size */
-  /* font-size: 120%; */
-
-  /* Font smoothing. That was taken from TWBS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Uncomment for 3D effect */
-  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
 .social-list .legend {
@@ -348,28 +280,6 @@ footer {
     transform: translate3d(0, -100%, 0);
     opacity: 0;
   }
-}
-
-/* =Responsive Styles
--------------------------------------------------------------- */
-/* Landscape Phones */
-@media only screen and (min-width: 480px) {
-
-}
-
-/* Small Devices, Tablets */
-@media only screen and (min-width: 768px) {
-
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {
-
 }
 
 .highlight {
